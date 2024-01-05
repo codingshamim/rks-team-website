@@ -1,0 +1,32 @@
+@media (max-width:1024px) {
+    .container{
+        width: 90%!important;
+    }
+    .logo{
+        font-size: 20px;
+    }   
+}
+
+@media (max-width:768px) {
+    .menus-side ul{
+        width: 200px;
+        height: 100vh;
+        background: var(--bg-color);
+        position: fixed;
+        left: -200px;
+        top: 0;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        transition: all 0.5s;
+        border: 1px solid;
+        border-image-source: linear-gradient(90deg,#4d88c4 2.34%,#964be1 100.78%);
+        border-image-slice: 1;
+    }
+    .menus-side ul.active-menu{
+        left: 0;
+    }
+}

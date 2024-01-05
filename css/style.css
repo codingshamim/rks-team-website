@@ -1,0 +1,171 @@
+/*--
+  Title: Rks Team Website Template Design
+  Author: Rakib Khan Shamim(RksTeam)
+*/
+
+/* import google font start  */
+@import url('https://fonts.googleapis.com/css2?family=Borel&family=Josefin+Sans:wght@200;300;400;500;600;700&display=swap');
+/* import google font end */
+
+/* Basic Style start  */
+*{
+    font-family: 'Josefin Sans', sans-serif;
+}
+/* variable for rks team Start */
+:root{
+    --primary: #7919DA;
+    --white:#fff;
+    --linear: linear-gradient(90deg,#4d88c4 2.34%,#964be1 100.78%);
+    --bg-color:#111827;
+}
+/* variable for rks team  End*/
+/* body style start  */
+body{
+    background: var(--bg-color);
+}
+/* body style end  */
+
+
+/* Basic Style end  */
+
+html{
+    scroll-behavior: smooth;
+}
+/* reused class start  */
+.container{
+    max-width: 1140px!important;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.primary-bg{
+    background-color: var(--primary);
+}
+.text-gradient {
+    background: linear-gradient(90deg,#4d88c4 2.34%,#964be1 100.78%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.white{
+    color: var(--white);
+}
+.btn{
+    padding: 8px 25px;
+    border: 1px solid;
+    border-image-source: linear-gradient(90deg,#4d88c4 2.34%,#964be1 100.78%);
+    border-image-slice: 1;
+    position: relative;
+  
+}
+.border{
+    border: 1px solid;
+    border-image-source: linear-gradient(90deg,#4d88c4 2.34%,#964be1 100.78%);
+    border-image-slice: 1;
+}
+
+.btn::after{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-image: var(--linear);
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    top: 0;
+    transition: all 0.5s;
+}
+.btn:hover::after{
+    width: 100%;
+}
+.menus-side li{
+    position: relative;
+}
+.menus-side li::before{
+    content: "";
+    top: 100%;
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-image: var(--linear);
+    transition: all 0.5s;
+}
+.menus-side li.active::before{
+    content: "";
+    top: 100%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-image: var(--linear);
+    transition: all 0.5s;
+}
+.menus-side li:hover::before{
+    width: 100%;
+}
+section{
+    min-height: 100vh;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+.primary-color{
+    color: var(--primary);
+}
+/* reused class end */
+/* logo style start  */
+.logo {
+    font-family: 'Borel', cursive;
+    color: var(--white);
+    font-size: 25px;
+    font-weight: bold; 
+}
+
+/* logo style end  */
+/* menubar start  */
+.menu-btn{
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.menu-btn span{
+    width: 20px;
+    height: 2px;
+    right: 0;
+    background: var(--white);
+    position: relative;
+    transition: all 0.5s;
+}
+.menu-btn.active-menu span{
+    background: var(--primary);
+}
+.menu-btn span::after,
+.menu-btn span::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--white);
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+}
+.menu-btn span::after{
+    transform: translateY(6px);
+}
+.menu-btn span::before{
+    transform: translateY(-6px);
+}
+.menu-btn.active-menu span::after{
+    transform: rotate(45deg);
+}
+.menu-btn.active-menu span::before{
+    transform: rotate(-45deg);
+}
+
+
+/* menubar end */
